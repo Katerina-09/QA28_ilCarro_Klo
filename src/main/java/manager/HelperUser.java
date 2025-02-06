@@ -21,13 +21,13 @@ public class HelperUser extends HelperBase{
 
     }
     public void logOk(){
-        click(By.xpath("//button[text()='Ok']"));
+        click(By.xpath("//button[contains(text(), 'Ok')]"));
     }
     public boolean isLogged(){
-        return isElementPresent(By.cssSelector("a.navigation-link[href='Logout?url=%2Fsearch']"));
+        return isElementPresent(By.cssSelector("a[href='/logout?url=%2Fsearch']"));
     }
     public void logOut(){
-        click(By.cssSelector("a.navigation-link[href='Logout?url=%2Fsearch']"));
+        click(By.cssSelector("a[href='/logout?url=%2Fsearch']"));
 
     }
 }

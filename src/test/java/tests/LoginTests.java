@@ -18,6 +18,7 @@ public class LoginTests extends TestBase{
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm("firiall@mail.ru","Tele2user1!");
         app.getHelperUser().submitLog();
+        app.getHelperUser().logOk();
         //Assert
 //        Assert.assertEquals();
 //        Assert.assertNotEquals();
