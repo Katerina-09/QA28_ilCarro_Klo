@@ -30,4 +30,10 @@ public class HelperUser extends HelperBase{
         click(By.cssSelector("a[href='/logout?url=%2Fsearch']"));
 
     }
+
+
+    public String getMessage() {
+        //pause(2000);
+        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
+    }
 }
