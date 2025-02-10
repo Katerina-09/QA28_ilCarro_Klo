@@ -3,6 +3,9 @@ package manager;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class HelperUser extends HelperBase{
     public HelperUser(WebDriver wd) {
@@ -42,5 +45,10 @@ public class HelperUser extends HelperBase{
     public String getMessage() {
         //pause(2000);
         return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
+    }
+
+    public boolean isErrorMassagePresent(String mess) {
+        List<WebElement> errorElements = wd.findElements(By.xpath("//div[@class='error']//div[contains(text(), 'look like')]"));
+        return !errorElements.isEmpty();
     }
 }
