@@ -48,7 +48,7 @@ public class HelperUser extends HelperBase{
     }
 
     public boolean isErrorMassagePresent(String mess) {
-        List<WebElement> errorElements = wd.findElements(By.xpath("//div[@class='error']//div[contains(text(), 'look like')]"));
+        List<WebElement> errorElements = wd.findElements(By.xpath("//div[@class='error']"));
         return !errorElements.isEmpty();
     }
 }

@@ -76,7 +76,7 @@ public class LoginTests extends TestBase{
         //app.getHelperUser().logOk();
 
         //Assert.assertFalse(app.getHelperUser().isLogged());
-        Assert.assertTrue(app.getHelperUser().isErrorMassagePresent(" Email is required "), "Error");
+        Assert.assertTrue(app.getHelperUser().isErrorMassagePresent("Email is required"), "Error");
 
     }
 
@@ -88,11 +88,11 @@ public class LoginTests extends TestBase{
 
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
-        //app.getHelperUser().submitLog();
+        app.getHelperUser().submitLog();
         //app.getHelperUser().logOk();
 
         //Assert.assertFalse(app.getHelperUser().isLogged());
-        Assert.assertTrue(app.getHelperUser().isErrorMassagePresent("Password is required"), "Error");
+        Assert.assertTrue(app.getHelperUser().isErrorMassagePresent(" Password is required "), "Error");
 
 
     }
@@ -113,9 +113,9 @@ public class LoginTests extends TestBase{
 
     }
 
-    //@AfterMethod
-   // public void postCondition(){
-    //    app.getHelperUser().logOk();
-   // }
+   // @AfterMethod
+    //public void postCondition(){
+      //  app.getHelperUser().logOk();
+  // }
 
 }
