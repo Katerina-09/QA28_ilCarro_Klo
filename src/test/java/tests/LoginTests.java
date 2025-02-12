@@ -23,8 +23,8 @@ public class LoginTests extends TestBase{
 
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
-        app.getHelperUser().submitLog();
-        app.getHelperUser().pause(5000);
+        app.getHelperUser().submit();
+       // app.getHelperUser().pause(5000);
         app.getHelperUser().logOk();
         //Assert
 //        Assert.assertEquals();
@@ -44,7 +44,7 @@ public class LoginTests extends TestBase{
 
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
-        app.getHelperUser().submitLog();
+        app.getHelperUser().submit();
         app.getHelperUser().pause(5000);
 
 
@@ -61,7 +61,7 @@ public class LoginTests extends TestBase{
 
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
-        app.getHelperUser().submitLog();
+        app.getHelperUser().submit();
         app.getHelperUser().pause(5000);
        // app.getHelperUser().logOk();
 
@@ -78,7 +78,7 @@ public class LoginTests extends TestBase{
 
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
-        app.getHelperUser().submitLog();
+        app.getHelperUser().submit();
         app.getHelperUser().pause(5000);
         //app.getHelperUser().logOk();
 
@@ -97,7 +97,7 @@ public class LoginTests extends TestBase{
 
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
-        app.getHelperUser().submitLog();
+        app.getHelperUser().submit();
         app.getHelperUser().pause(5000);
         //app.getHelperUser().logOk();
 
@@ -117,7 +117,7 @@ public class LoginTests extends TestBase{
 
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
-        app.getHelperUser().submitLog();
+        app.getHelperUser().submit();
         app.getHelperUser().pause(5000);
         //app.getHelperUser().logOk();
 
