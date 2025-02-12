@@ -51,4 +51,13 @@ public class HelperUser extends HelperBase{
         List<WebElement> errorElements = wd.findElements(By.xpath("//div[@class='error']"));
         return !errorElements.isEmpty();
     }
+
+    public void clickOkButton() {
+        if (isElementPresent(By.xpath("//button[text()='Ok']")))
+            click(By.xpath("//button[text()='Ok']"));
+    }
+
+    public String getErrorText() {
+        return wd.findElement(By.cssSelector("div.error")).getText();
+    }
 }

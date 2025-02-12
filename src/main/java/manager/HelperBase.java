@@ -1,6 +1,7 @@
 package manager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,10 +17,18 @@ public class HelperBase {
         WebElement element = wd.findElement(locator);
         element.click();
         element.clear();
+       // clearNew(element);
         if(text != null) {
             element.sendKeys(text);
         }
     }
+
+    public void clearNew(WebElement element){
+        element.sendKeys("  ");
+        element.sendKeys(Keys.BACK_SPACE);
+    }
+
+
     public void click(By locator){
         WebElement element = wd.findElement(locator);
         element.click();
@@ -36,5 +45,10 @@ public class HelperBase {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    public boolean isYallaButtonNotActive() {
+       return isElementPresent(By.cssSelector("button[disabled]"));
     }
 }

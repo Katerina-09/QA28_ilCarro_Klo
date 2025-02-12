@@ -24,6 +24,7 @@ public class LoginTests extends TestBase{
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
         app.getHelperUser().submitLog();
+        app.getHelperUser().pause(5000);
         app.getHelperUser().logOk();
         //Assert
 //        Assert.assertEquals();
@@ -44,9 +45,12 @@ public class LoginTests extends TestBase{
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
         app.getHelperUser().submitLog();
+        app.getHelperUser().pause(5000);
 
 
         Assert.assertTrue(app.getHelperUser().isErrorMassagePresent("It snot look like email"), "Error");
+        //Assert.assertEquals(app.getHelperUser().getErrorText(), "It snot look like email");
+        Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
 
     }
     @Test
@@ -58,9 +62,11 @@ public class LoginTests extends TestBase{
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
         app.getHelperUser().submitLog();
+        app.getHelperUser().pause(5000);
        // app.getHelperUser().logOk();
 
         Assert.assertFalse(app.getHelperUser().isLogged());
+        //Assert.assertEquals(app.getHelperUser().getErrorText(), "\"Login or Password incorrect\"");
         Assert.assertEquals(app.getHelperUser().getMessage(), "\"Login or Password incorrect\"");
 
     }
@@ -73,10 +79,13 @@ public class LoginTests extends TestBase{
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
         app.getHelperUser().submitLog();
+        app.getHelperUser().pause(5000);
         //app.getHelperUser().logOk();
 
         //Assert.assertFalse(app.getHelperUser().isLogged());
+        //Assert.assertEquals(app.getHelperUser().getErrorText(), "Email is required"");
         Assert.assertTrue(app.getHelperUser().isErrorMassagePresent("Email is required"), "Error");
+        Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
 
     }
 
@@ -89,16 +98,19 @@ public class LoginTests extends TestBase{
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
         app.getHelperUser().submitLog();
+        app.getHelperUser().pause(5000);
         //app.getHelperUser().logOk();
 
         //Assert.assertFalse(app.getHelperUser().isLogged());
         Assert.assertTrue(app.getHelperUser().isErrorMassagePresent(" Password is required "), "Error");
+        //Assert.assertEquals(app.getHelperUser().getErrorText(), "Password is required"");
+       // Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
 
 
     }
 
     @Test
-    public void ligUnregisteredUser() {
+    public void logUnregisteredUser() {
         User user = new User().setEmail("firiall6@mail.ru").setPassword("Tele2user1!");
         //user.setEmail("firiall@mail.ru");
         // user.setPassword("Tele2user1!");
@@ -106,16 +118,18 @@ public class LoginTests extends TestBase{
         app.getHelperUser().openLogForm();
         app.getHelperUser().fillLogForm(user);
         app.getHelperUser().submitLog();
+        app.getHelperUser().pause(5000);
         //app.getHelperUser().logOk();
 
         Assert.assertFalse(app.getHelperUser().isLogged());
+        //Assert.assertEquals(app.getHelperUser().getErrorText(), "\"Login or Password incorrect\"");
         Assert.assertEquals(app.getHelperUser().getMessage(), "\"Login or Password incorrect\"");
 
     }
 
-   // @AfterMethod
-    //public void postCondition(){
-      //  app.getHelperUser().logOk();
-  // }
+    @AfterMethod
+    public void postCondition(){
+        app.getHelperUser().clickOkButton();
+   }
 
 }
